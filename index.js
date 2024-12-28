@@ -5,6 +5,7 @@ const handler = async () => {
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
+      ignoreDefaultArgs: ['--disable-extensions'],
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath(
         "https://github.com/Sparticuz/chromium/releases/download/v110.0.1/chromium-v110.0.1-pack.tar"
